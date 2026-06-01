@@ -1,0 +1,151 @@
+.playground {
+  background: #0d1117;
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.playground-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.playground-label {
+  font-weight: 700;
+  color: #7dd3fc;
+  font-size: 0.9rem;
+}
+
+.playground-title {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.playground-env-hint {
+  font-size: 0.85rem;
+  color: var(--accent-3);
+  margin: 0 0 0.75rem;
+}
+
+.playground-hint {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+}
+
+.playground-editor-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.playground-editor {
+  width: 100%;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  padding: 1rem;
+  background: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #e6edf3;
+  resize: vertical;
+  min-height: 120px;
+  tab-size: 4;
+}
+
+.playground-editor:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.25);
+}
+
+.playground-inputs {
+  margin-top: 1rem;
+}
+
+.playground-inputs label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-muted);
+}
+
+.playground-inputs-field {
+  width: 100%;
+  font-family: ui-monospace, monospace;
+  font-size: 0.85rem;
+  padding: 0.6rem;
+  background: #161b22;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  resize: vertical;
+}
+
+.playground-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.playground-output {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+.playground-output--error {
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.playground-output-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.playground-output pre {
+  margin: 0;
+  font-family: ui-monospace, monospace;
+  font-size: 0.9rem;
+  color: #6ee7b7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.playground-output--error pre {
+  color: #fca5a5;
+}
+
+.playground-test {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.playground-test--ok {
+  background: rgba(52, 211, 153, 0.15);
+  color: #6ee7b7;
+}
+
+.playground-test--fail {
+  background: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+}
+
+.lesson-block--playground {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
