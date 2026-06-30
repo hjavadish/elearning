@@ -1,5 +1,5 @@
 import { STORAGE_KEYS } from '../../config/brand'
-import { PYTHON_COURSE_ID } from '../../data/python-lessons'
+import { PYTHON_COURSE_ID, PYTHON_LESSON_COUNT } from '../../data/python-lessons'
 import type { IDatabase } from '../interface'
 import { xpToLevel } from '../../utils/gamification'
 import type {
@@ -62,11 +62,13 @@ export class MockDatabase implements IDatabase {
     if (raw) {
       try {
         const parsed = JSON.parse(raw) as DbState
-        const hasEnglish = parsed.courses?.some((c) => c.slug === 'english')
+        const pythonLessons =
+          parsed.lessons?.filter((l) => l.courseId === PYTHON_COURSE_ID).length ?? 0
+        const hasFullCurriculum = pythonLessons >= PYTHON_LESSON_COUNT
         const hasPlayground = parsed.lessons?.some((l) =>
           l.sections?.some((s) => s.type === 'playground'),
         )
-        if (parsed.lessons?.length && hasEnglish && parsed.gameProfiles && hasPlayground)
+        if (parsed.lessons?.length && hasFullCurriculum && parsed.gameProfiles && hasPlayground)
           return parsed
       } catch {
         /* seed */
@@ -78,19 +80,27 @@ export class MockDatabase implements IDatabase {
       lessons: [...SEED_LESSONS],
       enrollments: [...SEED_ENROLLMENTS],
       lessonProgress: [
-        { userId: 'u-student', lessonId: 'l-1', completedAt: '2026-05-20T10:00:00Z' },
-        { userId: 'u-student', lessonId: 'l-2', completedAt: '2026-05-22T10:00:00Z' },
-        { userId: 'u-student', lessonId: 'en-1', completedAt: '2026-06-01T08:00:00Z' },
+        { userId: 'u-student', lessonId: 'py-1', completedAt: '2026-05-20T10:00:00Z' },
+        { userId: 'u-student', lessonId: 'py-2', completedAt: '2026-05-22T10:00:00Z' },
+        { userId: 'u-student', lessonId: 'py-3', completedAt: '2026-05-24T10:00:00Z' },
       ],
       gameProfiles: [...SEED_GAME_PROFILES],
       quizAttempts: [
         {
           userId: 'u-student',
-          lessonId: 'en-1',
+          lessonId: 'py-1',
           score: 100,
           passed: true,
-          xpEarned: 50,
-          completedAt: '2026-06-01T08:30:00Z',
+          xpEarned: 25,
+          completedAt: '2026-05-20T11:00:00Z',
+        },
+        {
+          userId: 'u-student',
+          lessonId: 'py-2',
+          score: 100,
+          passed: true,
+          xpEarned: 30,
+          completedAt: '2026-05-22T11:00:00Z',
         },
       ],
       sessions: [],

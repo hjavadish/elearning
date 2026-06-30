@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ENGLISH_COURSE_SLUG, PYTHON_COURSE_SLUG } from '../../config/brand'
+import { PYTHON_COURSE_SLUG } from '../../config/brand'
 import { GameHUD } from '../../components/GameHUD'
 import { getDatabase } from '../../db'
 import { useAuth } from '../../context/AuthContext'
@@ -40,12 +40,14 @@ export function StudentDashboard() {
     )
   }
 
+  const pythonEnrollment = enrollments.find((e) => e.course.slug === PYTHON_COURSE_SLUG)
+
   return (
     <>
       <header className="dash-header">
         <h1>سلام، {user.name} 👋</h1>
         <p>
-          پلن فعلی: <PlanBadge plan={user.plan} />
+          پلن فعلی: <PlanBadge plan={user.plan} /> · مسیر یادگیری: 🐍 پایتون
         </p>
       </header>
 
@@ -74,57 +76,46 @@ export function StudentDashboard() {
       )}
 
       <section className="panel-card">
-        <h2>دوره‌های من</h2>
-        {enrollments.length === 0 ? (
-          <p className="empty-state">هنوز در دوره‌ای ثبت‌نام نکردی</p>
+        <h2>مسیر پایتون</h2>
+        {pythonEnrollment ? (
+          <Link
+            to={`/student/courses/${PYTHON_COURSE_SLUG}`}
+            className="course-item"
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <div className="course-icon">🐍</div>
+            <div className="course-item-info">
+              <h3>{pythonEnrollment.course.title}</h3>
+              <p>
+                {pythonEnrollment.course.lessonsCount} درس · محیط کد مرورگر · کوییز و XP
+              </p>
+            </div>
+            <div className="course-progress">
+              <span>{pythonEnrollment.progress}٪</span>
+              <div className="progress-bar">
+                <div
+                  className="progress-fill"
+                  style={{ width: `${pythonEnrollment.progress}%` }}
+                />
+              </div>
+            </div>
+          </Link>
         ) : (
-          <div className="course-list">
-            {enrollments.map((item) => (
-              <Link
-                key={item.id}
-                to={`/student/courses/${item.course.slug}`}
-                className="course-item"
-                style={{ textDecoration: 'none', color: 'inherit' }}
-              >
-                <div className="course-icon">🐍</div>
-                <div className="course-item-info">
-                  <h3>{item.course.title}</h3>
-                  <p>{item.course.category} · {item.course.lessonsCount} درس</p>
-                </div>
-                <div className="course-progress">
-                  <span>{item.progress}٪</span>
-                  <div className="progress-bar">
-                    <div
-                      className="progress-fill"
-                      style={{ width: `${item.progress}%` }}
-                    />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <p className="empty-state">در حال آماده‌سازی مسیر پایتون...</p>
         )}
       </section>
 
       <section className="panel-card">
-        <h2>یادگیری بازی‌وار 🎮</h2>
+        <h2>ادامه یادگیری 🎮</h2>
         <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-          کوییز بده، XP جمع کن و سطحت رو بالا ببر!
+          کد بنویس، کوییز بده، XP جمع کن و پروژه بساز — همه در یک مسیر حرفه‌ای پایتون.
         </p>
-        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <Link
-            to={`/student/courses/${PYTHON_COURSE_SLUG}`}
-            className="btn btn-outline"
-          >
-            🐍 پایتون
-          </Link>
-          <Link
-            to={`/student/courses/${ENGLISH_COURSE_SLUG}`}
-            className="btn btn-primary"
-          >
-            🇬🇧 انگلیسی + کوییز
-          </Link>
-        </div>
+        <Link
+          to={`/student/courses/${PYTHON_COURSE_SLUG}`}
+          className="btn btn-primary btn-lg"
+        >
+          🐍 ادامه مسیر پایتون
+        </Link>
       </section>
     </>
   )

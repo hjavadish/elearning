@@ -13,7 +13,7 @@ export function AdminDashboard() {
   const [loading, setLoading] = useState(true)
 
   const db = getDatabase()
-
+  
   const load = async () => {
     setLoading(true)
     const [s, u, c] = await Promise.all([

@@ -3,7 +3,6 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { GameHUD } from '../../components/GameHUD'
 import { LessonContent } from '../../components/LessonContent'
 import { QuizGame } from '../../components/QuizGame'
-import { PYTHON_COURSE_SLUG } from '../../config/brand'
 import { getDatabase } from '../../db'
 import { useAuth } from '../../context/AuthContext'
 import type { Course, GameProfile, Lesson } from '../../types'
@@ -92,9 +91,7 @@ export function LessonPage() {
 
       <header className="lesson-page-header">
         <p className="breadcrumb">
-          <Link to="/student/courses">دوره‌ها</Link>
-          {' / '}
-          <Link to={base}>{course.title}</Link>
+          <Link to={`/student/courses/${course.slug}`}>مسیر پایتون</Link>
           {' / '}
           <span>درس {lesson.order}</span>
         </p>
@@ -104,7 +101,7 @@ export function LessonPage() {
 
       <LessonContent
         sections={lesson.sections}
-        enablePlayground={course.slug === PYTHON_COURSE_SLUG}
+        enablePlayground
       />
 
       {lesson.quiz && (

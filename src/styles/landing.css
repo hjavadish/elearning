@@ -7,7 +7,7 @@
   position: fixed;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.35;
+  opacity: var(--glow-opacity);
   pointer-events: none;
   z-index: 0;
 }
@@ -103,13 +103,13 @@ main,
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), #9333ea);
-  color: #fff;
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--on-primary);
+  box-shadow: 0 8px 24px var(--primary-glow);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 12px 32px var(--primary-glow);
 }
 
 .btn-ghost {
@@ -129,7 +129,7 @@ main,
 
 .btn-outline:hover {
   border-color: var(--primary-light);
-  background: rgba(124, 58, 237, 0.1);
+  background: var(--primary-hover);
 }
 
 .btn-lg {
@@ -156,8 +156,8 @@ main,
 .hero-badge {
   display: inline-block;
   padding: 0.35rem 1rem;
-  background: rgba(124, 58, 237, 0.2);
-  border: 1px solid rgba(167, 139, 250, 0.3);
+  background: var(--hero-badge-bg);
+  border: 1px solid var(--primary-border);
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 600;
@@ -244,12 +244,12 @@ main,
 }
 
 .dot--green {
-  background: #34d399;
+  background: var(--success);
 }
 
 .progress-bar {
   height: 10px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--progress-track);
   border-radius: 999px;
   overflow: hidden;
   margin-bottom: 0.75rem;
@@ -361,7 +361,7 @@ main,
 }
 
 .feature-card:hover {
-  border-color: rgba(124, 58, 237, 0.4);
+  border-color: var(--border-hover);
   transform: translateY(-4px);
 }
 
@@ -407,12 +407,8 @@ main,
 
 .plan-card--highlighted {
   border-color: var(--primary);
-  background: linear-gradient(
-    180deg,
-    rgba(124, 58, 237, 0.15) 0%,
-    var(--bg-card) 40%
-  );
-  box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.3), var(--shadow);
+  background: var(--plan-highlight-bg);
+  box-shadow: 0 0 0 1px var(--primary-border), var(--shadow);
   transform: scale(1.03);
 }
 
@@ -426,7 +422,7 @@ main,
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(135deg, var(--accent-3), var(--accent));
-  color: #1a1025;
+  color: var(--on-accent-badge);
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.35rem 1rem;
@@ -530,11 +526,7 @@ main,
   max-width: 640px;
   margin: 0 auto 4rem;
   padding: 3rem 2rem;
-  background: linear-gradient(
-    135deg,
-    rgba(124, 58, 237, 0.25),
-    rgba(244, 114, 182, 0.15)
-  );
+  background: var(--cta-banner-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
 }

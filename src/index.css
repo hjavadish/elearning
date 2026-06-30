@@ -1,4 +1,6 @@
+@import './styles/themes.css';
 @import './styles/shared.css';
+@import './styles/theme-toggle.css';
 @import './styles/auth.css';
 @import './styles/dashboard.css';
 @import './styles/lesson.css';
@@ -13,19 +15,8 @@
 
 :root {
   --font: 'Vazirmatn', system-ui, sans-serif;
-  --bg: #0c0a14;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --text: #e8e4f0;
-  --text-muted: #9b94ad;
-  --primary: #7c3aed;
-  --primary-light: #a78bfa;
-  --accent: #f472b6;
-  --accent-2: #22d3ee;
-  --accent-3: #fbbf24;
-  --border: rgba(255, 255, 255, 0.08);
   --radius: 16px;
   --radius-lg: 24px;
-  --shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
 }
 
 html {
@@ -38,8 +29,9 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: var(--text);
-  background: var(--bg);
+  background: var(--bg-gradient);
   -webkit-font-smoothing: antialiased;
+  transition: background 0.35s ease, color 0.25s ease;
 }
 
 #root {

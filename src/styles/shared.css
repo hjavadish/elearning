@@ -18,9 +18,9 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), #9333ea);
-  color: #fff;
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--on-primary);
+  box-shadow: 0 8px 24px var(--primary-glow);
 }
 
 .btn-ghost {
@@ -40,7 +40,7 @@
 
 .btn-outline:hover {
   border-color: var(--primary-light);
-  background: rgba(124, 58, 237, 0.1);
+  background: var(--primary-hover);
 }
 
 .btn-lg {
@@ -107,7 +107,7 @@
   position: fixed;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.35;
+  opacity: var(--glow-opacity);
   pointer-events: none;
   z-index: 0;
 }
@@ -136,14 +136,14 @@
 }
 
 .alert-error {
-  background: rgba(239, 68, 68, 0.15);
-  border: 1px solid rgba(239, 68, 68, 0.4);
-  color: #fca5a5;
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  color: var(--error-text);
 }
 
 .alert-info {
-  background: rgba(34, 211, 238, 0.1);
-  border: 1px solid rgba(34, 211, 238, 0.3);
+  background: var(--info-bg);
+  border: 1px solid var(--info-border);
   color: var(--accent-2);
 }
 
@@ -156,11 +156,11 @@
 }
 
 .badge-free {
-  background: rgba(156, 163, 175, 0.2);
-  color: #d1d5db;
+  background: var(--badge-free-bg);
+  color: var(--badge-free-text);
 }
 .badge-plus {
-  background: rgba(124, 58, 237, 0.25);
+  background: var(--primary-subtle);
   color: var(--primary-light);
 }
 .badge-pro {

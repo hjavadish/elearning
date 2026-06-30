@@ -1,9 +1,5 @@
 .course-hero {
-  background: linear-gradient(
-    135deg,
-    rgba(124, 58, 237, 0.2),
-    rgba(34, 211, 238, 0.1)
-  );
+  background: var(--course-hero-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -41,7 +37,7 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--bg-subtle);
   border: 1px solid var(--border);
   border-radius: 12px;
   text-decoration: none;
@@ -55,14 +51,14 @@
 }
 
 .lesson-list-item--done {
-  border-color: rgba(52, 211, 153, 0.35);
+  border-color: var(--success-border);
 }
 
 .lesson-order {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(124, 58, 237, 0.25);
+  background: var(--primary-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,8 +67,8 @@
 }
 
 .lesson-list-item--done .lesson-order {
-  background: rgba(52, 211, 153, 0.25);
-  color: #6ee7b7;
+  background: var(--success-subtle);
+  color: var(--success-text);
 }
 
 .lesson-list-body {
@@ -131,8 +127,8 @@
 }
 
 .lesson-block--code {
-  background: #0d1117;
-  border-color: rgba(124, 58, 237, 0.3);
+  background: var(--bg-code);
+  border-color: var(--border-hover);
 }
 
 .lesson-block--tip {
@@ -140,9 +136,14 @@
   border-color: rgba(251, 191, 36, 0.25);
 }
 
+[data-theme='light'] .lesson-block--tip {
+  background: rgba(217, 119, 6, 0.08);
+  border-color: rgba(217, 119, 6, 0.2);
+}
+
 .lesson-block--exercise {
-  background: rgba(34, 211, 238, 0.08);
-  border-color: rgba(34, 211, 238, 0.25);
+  background: var(--info-bg);
+  border-color: var(--info-border);
 }
 
 .lesson-block h3 {
@@ -163,7 +164,7 @@
   font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #e6edf3;
+  color: var(--text-code);
   text-align: left;
 }
 
@@ -182,8 +183,8 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.35rem 0.75rem;
-  background: rgba(55, 118, 171, 0.25);
+  background: var(--primary-subtle);
   border-radius: 8px;
   font-size: 0.85rem;
-  color: #7dd3fc;
+  color: var(--text-syntax);
 }

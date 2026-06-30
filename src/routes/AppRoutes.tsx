@@ -36,7 +36,7 @@ export function AppRoutes() {
               role="student"
               navItems={[
                 { to: '/student', label: 'داشبورد', end: true },
-                { to: '/student/courses', label: 'دوره‌ها' },
+                { to: '/student/courses', label: 'مسیر پایتون' },
               ]}
             />
           }

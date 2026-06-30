@@ -1,0 +1,13 @@
+import { PYTHON_ADVANCED_LESSONS } from './advanced'
+import { PYTHON_BEGINNER_LESSONS, PYTHON_COURSE_ID } from './beginner'
+import { PYTHON_INTERMEDIATE_LESSONS } from './intermediate'
+
+export { PYTHON_COURSE_ID }
+
+export const PYTHON_LESSONS = [
+  ...PYTHON_BEGINNER_LESSONS,
+  ...PYTHON_INTERMEDIATE_LESSONS,
+  ...PYTHON_ADVANCED_LESSONS,
+]
+
+export const PYTHON_LESSON_COUNT = PYTHON_LESSONS.length

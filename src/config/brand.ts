@@ -13,11 +13,11 @@ export const DEMO_EMAILS = {
 
 export const STORAGE_KEYS = {
   session: 'rahna_session',
-  db: 'rahna_db_v4',
+  db: 'rahna_db_v5',
+  theme: 'rahna_theme',
 } as const
 
 export const PYTHON_COURSE_SLUG = 'python'
-export const ENGLISH_COURSE_SLUG = 'english'
 
 export const LEVEL_LABELS = {
   beginner: 'مبتدی',

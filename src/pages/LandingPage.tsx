@@ -4,29 +4,29 @@ import '../styles/landing.css'
 
 const features = [
   {
+    icon: '🐍',
+    title: 'مسیر حرفه‌ای پایتون',
+    desc: '۲۰ درس از مبتدی تا پروژه — متغیر، حلقه، OOP و Todo App نهایی.',
+  },
+  {
+    icon: '⌨️',
+    title: 'کدنویسی در مرورگر',
+    desc: 'Pyodide — پایتون واقعی بدون نصب. بنویس، اجرا کن، تست بگیر.',
+  },
+  {
     icon: '🎮',
     title: 'یادگیری بازی‌وار',
     desc: 'کوییز، XP، استریک و ۳ جان — هر درس مثل یک مرحله بازی!',
   },
   {
-    icon: '🇬🇧',
-    title: 'انگلیسی مبتدی تا پیشرفته',
-    desc: '۱۲ درس سطح‌بندی‌شده با کوییز هیجان‌انگیز در هر مرحله.',
+    icon: '🎯',
+    title: 'پروژه‌های واقعی',
+    desc: 'ماشین‌حساب، بازی حدس عدد و لیست کارها — مهارت عملی.',
   },
   {
     icon: '📱',
     title: 'همه‌جا در دسترس',
     desc: 'موبایل، تبلت و لپ‌تاپ — هر وقت خواستی ادامه بده.',
-  },
-  {
-    icon: '👥',
-    title: 'جامعه نوجوانان',
-    desc: 'با هم‌سن‌هات گفتگو کن، پروژه بساز و تیم شو.',
-  },
-  {
-    icon: '🎯',
-    title: 'مسیر شخصی',
-    desc: 'بر اساس علایق و سطحت، برنامه اختصاصی می‌گیری.',
   },
 ]
 
@@ -38,9 +38,9 @@ const plans = [
     period: 'همیشه رایگان',
     desc: 'شروع کن و با پلتفرم آشنا شو',
     features: [
-      'دسترسی به ۳ دوره پایه',
-      '۵ آزمون در ماه',
-      'انجمن گفتگو',
+      'مسیر کامل پایتون (مبتدی تا پروژه)',
+      'محیط کدنویسی مرورگر',
+      'کوییز و XP',
       'گواهی ساده',
     ],
     cta: 'شروع رایگان',
@@ -53,11 +53,11 @@ const plans = [
     period: 'هزار تومان / ماه',
     desc: 'محبوب‌ترین انتخاب نوجوانان',
     features: [
-      'همه دوره‌ها بدون محدودیت',
-      'آزمون و تمرین نامحدود',
+      'همه ۲۰ درس + پروژه‌ها',
+      'کوییز و تمرین نامحدود',
       'گواهی معتبر',
       'پشتیبانی اولویت‌دار',
-      'دانلود ویدیو برای آفلاین',
+      'مسیر پیشرفته OOP',
     ],
     cta: 'خرید پلاس',
     highlighted: true,
@@ -94,8 +94,8 @@ export function LandingPage() {
               <span className="gradient-text">جذاب و هوشمند</span>
             </h1>
             <p className="hero-desc">
-              {BRAND.name} همراه یادگیری توئه — از پایتون برای مبتدیان شروع کن.
-              درس‌های کوتاه، تمرین عملی و پیشرفت قابل‌پیگیری برای نوجوانان.
+              {BRAND.name} پلتفرم تخصصی یادگیری پایتون برای نوجوانان — از اولین
+              print تا پروژه Todo. کدنویسی در مرورگر، کوییز، XP و ۲۰ درس حرفه‌ای.
             </p>
             <div className="hero-cta">
               <a href="#pricing" className="btn btn-primary btn-lg">
@@ -111,8 +111,8 @@ export function LandingPage() {
                 <span>دانش‌آموز فعال</span>
               </div>
               <div>
-                <strong>+۸۰</strong>
-                <span>دوره تخصصی</span>
+                <strong>۲۰</strong>
+                <span>درس پایتون</span>
               </div>
               <div>
                 <strong>۴.۹</strong>
@@ -124,7 +124,7 @@ export function LandingPage() {
             <div className="hero-card hero-card--main">
               <div className="hero-card-header">
                 <span className="dot dot--green" />
-                <span>درس امروز: پایتون — متغیرها</span>
+                <span>درس امروز: پایتون — توابع</span>
               </div>
               <div className="progress-bar">
                 <div className="progress-fill" style={{ width: '72%' }} />
@@ -152,7 +152,7 @@ export function LandingPage() {
         <section id="features" className="features">
           <h2 className="section-title">چرا {BRAND.name}؟</h2>
           <p className="section-desc">
-            طراحی شده برای نسل Z — سریع، رنگی و بدون حوصله‌سری
+            تمرکز ۱۰۰٪ روی پایتون — برای نوجوانانی که می‌خواهند برنامه‌نویس شوند
           </p>
           <div className="features-grid">
             {features.map((f) => (

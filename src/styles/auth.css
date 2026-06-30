@@ -47,7 +47,7 @@
 .form-group select {
   width: 100%;
   padding: 0.75rem 1rem;
-  background: rgba(0, 0, 0, 0.25);
+  background: var(--bg-input);
   border: 1px solid var(--border);
   border-radius: 10px;
   color: var(--text);
@@ -82,7 +82,7 @@
 
 .role-option:has(input:checked) {
   border-color: var(--primary);
-  background: rgba(124, 58, 237, 0.15);
+  background: var(--primary-subtle);
 }
 
 .role-option strong {
@@ -110,8 +110,8 @@
 .demo-hint {
   margin-top: 1.5rem;
   padding: 1rem;
-  background: rgba(34, 211, 238, 0.08);
-  border: 1px dashed rgba(34, 211, 238, 0.3);
+  background: var(--info-bg);
+  border: 1px dashed var(--info-border);
   border-radius: 10px;
   font-size: 0.8rem;
   color: var(--text-muted);

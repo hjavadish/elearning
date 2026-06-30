@@ -1,6 +1,7 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { Logo } from '../Logo'
+import { ThemeToggle } from '../ThemeToggle'
 
 const roleLabels = {
   student: 'پنل دانش‌آموز',
@@ -49,6 +50,7 @@ export function DashboardLayout({
           ))}
         </nav>
         <div className="sidebar-footer">
+          <ThemeToggle className="theme-toggle--sidebar" />
           <div className="user-chip">
             <span className="user-avatar">{user?.name.charAt(0)}</span>
             <div>

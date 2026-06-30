@@ -1,6 +1,7 @@
 import { Link, Outlet } from 'react-router-dom'
 import { dashboardPath, useAuth } from '../../context/AuthContext'
 import { Logo } from '../Logo'
+import { ThemeToggle } from '../ThemeToggle'
 
 export function PublicLayout() {
   const { user } = useAuth()
@@ -17,6 +18,7 @@ export function PublicLayout() {
           <a href="/#faq">سوالات</a>
         </nav>
         <div className="header-actions">
+          <ThemeToggle />
           {user ? (
             <Link to={dashboardPath(user.role)} className="btn btn-primary">
               پنل من
